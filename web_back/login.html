@@ -51,8 +51,8 @@
 
   <script src="./js/lib/jquery-1.12.4.min.js"></script>
   <script src="./js/bootstrap/js/bootstrap.min.js"></script>
-  <!-- <script src="./js/utils/config.js"></script>
-    <script src="./js/utils/user.js"></script> -->
+  <!-- <script src="./js/utils/config.js"></script> -->
+  <script src="./js/utils/user.js"></script>
 
   <script>
     // 思路
@@ -61,28 +61,48 @@
     // 2. ajax请求
     // 3. 根据结果给反馈
 
+    // $('#btnLogin').click(function () {
+    //   var userName = $('#userName').val();
+    //   var password = $('#password').val();
+    //   // console.log(userName, password);
+    //   if (userName === '' || password === '') {
+    //     $('#myModal').modal('show');
+    //     $('#pResult').text('请输入用户名或密码');
+    //     // alert('请输入用户名或密码');
+    //   } else {
+    //     $.post('http://localhost:8000/admin/login', { user_name: userName, password: password }, function (res) {
+    //       console.log(res);
+    //       if (res.code === 200) {
+    //         // alert(res.msg);
+    //         window.location.href = './index.html';
+    //       } else {
+    //         $('#myModal').modal('show');
+    //         $('#pResult').text(res.msg);
+    //         // alert(res.msg);
+    //       }
+    //     });
+    //   }
+    // });
+
     $('#btnLogin').click(function () {
       var userName = $('#userName').val();
       var password = $('#password').val();
-      // console.log(userName, password);
       if (userName === '' || password === '') {
         $('#myModal').modal('show');
         $('#pResult').text('请输入用户名或密码');
-        // alert('请输入用户名或密码');
       } else {
-        $.post('http://localhost:8000/admin/login', { user_name: userName, password: password }, function (res) {
+        user.login(userName, password, function (res) {
           console.log(res);
           if (res.code === 200) {
-            // alert(res.msg);
             window.location.href = './index.html';
           } else {
             $('#myModal').modal('show');
             $('#pResult').text(res.msg);
-            // alert(res.msg);
           }
         });
       }
     });
+
   </script>
 </body>
 
