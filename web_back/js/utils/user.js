@@ -10,6 +10,12 @@ var user = {
       //res是本次请求，从服务器回来的值
       callback(res);
     });
+  },
+
+  logout: function(callBack) {
+    $.post('http://localhost:8000/admin/logout', function(res) {
+      callBack(res);
+    });
   }
 }
 

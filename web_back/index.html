@@ -138,19 +138,19 @@
       }
     </script>
 
-    <script src="./js/utils/config.js"></script>
+    <!-- <script src="./js/utils/config.js"></script> -->
     <script src="./js/utils/user.js"></script>
 
     <script>
-      $(function() {
-        user.getInfo(function(res) {
-          console.log(res);
-          if (res.code === 200) {
-            $('#userName').html(res.data.nickname);
-            $('#userImg').attr('src', res.data.user_pic);
-          }
-        });
-      });
+      // $(function() {
+      //   user.getInfo(function(res) {
+      //     console.log(res);
+      //     if (res.code === 200) {
+      //       $('#userName').html(res.data.nickname);
+      //       $('#userImg').attr('src', res.data.user_pic);
+      //     }
+      //   });
+      // });
       // 给按钮添加点击事件
       // 1.调用 退出功能
       $('#btnLogout').click(function() {
